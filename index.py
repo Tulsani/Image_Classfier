@@ -41,17 +41,17 @@ training_set=train_datagen.flow_from_directory('dataset/training_set',
                                                 class_mode='binary')
 
 test_set=test_datagen.flow_from_directory('dataset/test_set',
-                                        target_size(64,64),
+                                        target_size=(64,64),
                                         batch_size=32,
                                         class_mode='binary')
 
-from Ipython.display import display
+from IPython.display import display
 from PIL import Image
 
 classfier.fit_generator(
          training_set,
          steps_per_epoch=8000,
-         epoch=10,
+         epochs=10,
          validation_data=test_set,
          validation_steps=800)
 
